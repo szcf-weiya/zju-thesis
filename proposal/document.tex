@@ -1,0 +1,28 @@
+\documentclass{book}
+\usepackage[CJKnumber]{xeCJK}
+\usepackage{zhnumber}
+\usepackage{titlesec}
+\usepackage{etoolbox}%
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}%
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}%
+\makeatother
+%\renewcommand{\chaptername}{}
+\renewcommand\thesection{\zhnum{section}、} 
+\titleformat{\section}{}{\thesection}{0pt}{}
+%\documentclass{book}
+\usepackage{titlesec}
+\titleformat{\chapter}[hang] 
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter:}{0em}{} 
+
+\begin{document}
+	\chapter{A chapter}
+	\section{A section}
+\end{document}
+%\renewcommand{\thesection}{%
+%  （\CJKnumber{\arabic{chapter}}、 %
+%    \CJKnumber{\arabic{section}}）}
+%\begin{document}
+%%\chapter{第一章}
+%\section{第一节}
+%\end{document}
