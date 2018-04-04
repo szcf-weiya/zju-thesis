@@ -98,14 +98,12 @@
 	{\baselineskip}%            afterskip
 	{\subsec}}% style
 
-%\renewcommand{\thechapter}{\CJK}
 \RequirePackage{zhnumber}
 
 \renewcommand{\chaptername}{}
 
 \renewcommand\thechapter{\zhnum{chapter}、} 
 
-%\renewcommand{\thechapter}{\arabic{chapter}} 
 \renewcommand\thesection{\arabic{section}}
 \titleformat{\chapter}[hang]{\centering\chap}{\chaptertitlename\ \thechapter}{0pt}{}
 \titlespacing*{\chapter}{0pt}{0pt}{40pt}
@@ -118,20 +116,6 @@
 \patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}%
 \patchcmd{\ttlh@hang}{\noindent}{}{}{}%
 \makeatother
-%\makeatletter
-%% \patchcmd{<cmd>}{<search>}{<replace>}{<success>}{<failure>}
-%% --- Patch \chapter
-%\patchcmd{\@makechapterhead}{50\p@}{\chapheadtopskip}{}{}% Space from top of page to CHAPTER X
-%\patchcmd{\@makechapterhead}{20\p@}{\chapheadsep}{}{}% Space between CHAPTER X and CHAPTER TITLE
-%\patchcmd{\@makechapterhead}{40\p@}{\chapheadbelowskip}{}{}% Space between CHAPTER TITLE and text
-%% --- Patch \chapter*
-%\patchcmd{\@makeschapterhead}{50\p@}{\chapheadtopskip}{}{}% Space from top of page to CHAPTER TITLE
-%\patchcmd{\@makeschapterhead}{40\p@}{\chapheadbelowskip}{}{}% Space between CHAPTER TITLE and text
-%% Set new lengths
-%\newlength{\chapheadtopskip}\setlength{\chapheadtopskip}{-10pt}
-%\newlength{\chapheadsep}\setlength{\chapheadsep}{0pt}
-%\newlength{\chapheadbelowskip}\setlength{\chapheadbelowskip}{5pt}
-%\makeatother
 \setcounter{tocdepth}{6}
 \setcounter{secnumdepth}{6}
 
