@@ -11,7 +11,7 @@
 
 1. 将 `main.tex` 文件中 `\documentclass[fangfont=STFANGSO.TTF,heifont=YaHeiConsolas.ttf]{zju-proposal}` 的 `fangfont` 赋值为自己电脑上的仿宋字体名，`heifont` 赋值为自己电脑上的黑体字体名；
 2. 完成自己的文献综述 `LiteratureReview.tex`，开题报告 `Proposal.tex`，以及外文翻译 `Translation.tex`，所有的参考文献均可以放在 `ref.bib` 文件中；
-3. 对于习惯使用终端的 Linux 或 Mac 用户，直接运行 `make` 便可以编译，一切顺利的话，便可以生成 `main.pdf` 文件，运行 `make clean` 能够删除编译过程中产生的多余文件；对于使用 texstudio 等 IDE 的用户，选择 `xelatex` 编译就好了。
+3. 对于习惯使用终端的 Linux 或 Mac 用户，直接运行 `make` 便可以编译，一切顺利的话，便可以生成 `main.pdf` 文件，运行 `make clean` 能够删除编译过程中产生的多余文件；对于使用 texstudio 等 IDE 的用户，选择 `xelatex` 编译就好了；
 4. 根据需要自行合并外文原文和 `main.pdf`。
 
 
