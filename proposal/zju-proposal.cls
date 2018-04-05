@@ -118,15 +118,15 @@
 	{1.5ex \@plus .2ex}%            afterskip
 	{\subsec}}% style
 
-%\renewcommand{\thechapter}{\CJK}
-
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% biblatex
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 注意放置顺序
 \RequirePackage{csquotes}
 \RequirePackage{xcolor} % DO NOT forget
 \RequirePackage[backend=biber,citestyle=authoryear,sortcites=true,natbib]{biblatex}
 %\RequirePackage{chapterbib}
 %% set citation color as blue
-%\renewcommand\nametitledelim{\ifin{textcite}{\addspace}{\addspace\addcomma}}
 \DeclareCiteCommand{\cite}
   {\color{blue}\usebibmacro{prenote}}%
   {\usebibmacro{citeindex}%
@@ -165,7 +165,6 @@
 	\bibopenparen#1\bibcloseparen
 	\endgroup}
 \makeatother
-%\patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
 \bibliography{ref.bib}
 \addbibresource{ref.bib}
 %\defbibheading{secbib}[]{% rename and change style to section
@@ -184,35 +183,20 @@
 \renewcommand\thesection{\arabic{section}}
 \titleformat{\chapter}[hang]{\centering\chap}{\chaptertitlename\ \thechapter}{0pt}{}
 \titlespacing*{\chapter}{0pt}{0pt}{40pt}
-%\titleformat{\section}{\sect}{\sectiontitlename\ \thesection}{1em}{}
-%\titleformat{\subsection}{\sihao}{\thesubsection}{}{}
-%\titleformat{\subsubsection}{\sihao}{\thesubsubsection}{}{}
+
 %% fix section number error
-\usepackage{etoolbox}%
+\RequirePackage{etoolbox}%
 \makeatletter
 \patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}%
 \patchcmd{\ttlh@hang}{\noindent}{}{}{}%
 \makeatother
-%\makeatletter
-%% \patchcmd{<cmd>}{<search>}{<replace>}{<success>}{<failure>}
-%% --- Patch \chapter
-%\patchcmd{\@makechapterhead}{50\p@}{\chapheadtopskip}{}{}% Space from top of page to CHAPTER X
-%\patchcmd{\@makechapterhead}{20\p@}{\chapheadsep}{}{}% Space between CHAPTER X and CHAPTER TITLE
-%\patchcmd{\@makechapterhead}{40\p@}{\chapheadbelowskip}{}{}% Space between CHAPTER TITLE and text
-%% --- Patch \chapter*
-%\patchcmd{\@makeschapterhead}{50\p@}{\chapheadtopskip}{}{}% Space from top of page to CHAPTER TITLE
-%\patchcmd{\@makeschapterhead}{40\p@}{\chapheadbelowskip}{}{}% Space between CHAPTER TITLE and text
-%% Set new lengths
-%\newlength{\chapheadtopskip}\setlength{\chapheadtopskip}{-10pt}
-%\newlength{\chapheadsep}\setlength{\chapheadsep}{0pt}
-%\newlength{\chapheadbelowskip}\setlength{\chapheadbelowskip}{5pt}
-%\makeatother
-\setcounter{tocdepth}{6}
-\setcounter{secnumdepth}{6}
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% table of contents
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{tocdepth}{6}
+\setcounter{secnumdepth}{6}
+
 \RequirePackage{titletoc}
 \titleclass{\guide}{straight}[\part]
 \titleclass{\assess}{straight}[\part]
@@ -243,11 +227,10 @@
 %% numbering
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\theequation}{\arabic{equation}}
-%\RequirePackage{chngcntr}
-%\counterwithout{equation}{chapter} % without chapter number
-%\RequirePackage[american]{babel}
-%\RequirePackage[style=apa,backend=biber,sortcites=true,citestyle=authoryear,natbib]{biblatex}
 
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% indent for the first paragraph
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{indentfirst}
 
 %%　%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
