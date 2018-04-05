@@ -1,24 +1,35 @@
 %!TEX program = xelatex
 %!TEX encoding = UTF-8
 
-\documentclass{zju-proposal}
+%% 将字体名替换成你本机电脑对应的字体名
+%% 其中：
+%% 		fangfont 为 仿宋字体
+%%		heifont 为 黑体（仅用于标题）
+\documentclass[fangfont=STFANGSO.TTF,heifont=YaHeiConsolas.ttf]{zju-proposal}
+\usepackage{url}
 \title{毕业论文（设计）题目}{浙江大学本科生毕业论文（设计）}
 
+\input{math.tex}
+
+\usepackage{lipsum} %% just for test
 
 \begin{document}
-	
+	\makecover
 	\input{guide.tex}
 	
 	\tableofcontents
 	
+	\begin{refsection}	
 	\input{LiteratureReview.tex}
+	\end{refsection}
 	
+	\begin{refsection}
 	\input{Proposal.tex}
+	\end{refsection}
 	
 	\input{Translation.tex}
 	
 	\input{Original.tex}
 	
-	\input{check.tex} % just combine
-
+	\input{check.tex} 
 \end{document}

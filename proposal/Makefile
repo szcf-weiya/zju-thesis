@@ -1,4 +1,7 @@
 all:
-	xelatex -synctex=1 -interaction=nonstopmode main.tex
+	xelatex main
+	biber main
+	xelatex main
+	xelatex main
 clean:
-	rm -f *.log *.aux *.synctex.gz *.toc 
+	rm -f *.log *.aux *.synctex.gz *.toc *.bbl *.bcf *.blg *.out *.xml
