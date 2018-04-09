@@ -12,8 +12,6 @@ script:
 - xelatex -output-directory _build proposal/test.tex
 before_deploy:
   # Set up git user name and tag this commit
-  - git config --local user.name "szcf-weiya"
-  - git config --local user.email "szcfweiya@gmail.com"
   - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
