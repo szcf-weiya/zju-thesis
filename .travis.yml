@@ -2,7 +2,7 @@ sudo: required
 dist: trusty
 before_install:
   - sudo apt-get update && sudo apt-get install --no-install-recommends texlive-fonts-recommended
-    texlive-latex-extra texlive-fonts-extra texlive-latex-recommended texlive-xetex fonts-lmodern latex-color dvipng
+    texlive-latex-extra texlive-fonts-extra texlive-latex-recommended texlive-xetex fonts-lmodern latex-xcolor dvipng
   - wget -c https://sourceforge.net/projects/zjuthesis/files/fonts.tar.gz/download -O
     fonts.tar.gz && tar xzf fonts.tar.gz && sudo mkdir -p /usr/share/fonts/truetype/custom/
     && sudo mv fonts/* /usr/share/fonts/truetype/custom/ && sudo fc-cache -f -v
