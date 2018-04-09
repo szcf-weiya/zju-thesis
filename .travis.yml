@@ -10,8 +10,10 @@ script:
   - cd proposal && make
 before_deploy:
   # Set up git user name and tag this commit
-  - git config --local user.name "TravisCI"
+  - git config --local user.name "Travis CI"
+  - git config --global user.email "builds@travis-ci.com"
   - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+  - git push -q https://$TAGPERM@github.com/$TRAVIS_REPO_SLUG --tags
 deploy:
   provider: releases
   api_key:
