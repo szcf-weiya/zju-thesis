@@ -9,6 +9,8 @@ before_install:
   && sudo mv fonts/* /usr/share/fonts/truetype/custom/ && sudo fc-cache -f -v
 script:
 - make -C proposal/
+before_deploy:
+  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
   api_key:
