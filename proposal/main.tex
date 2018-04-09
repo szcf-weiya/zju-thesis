@@ -1,22 +1,24 @@
 %!TEX program = xelatex
 %!TEX encoding = UTF-8
 
-%% 将字体名替换成你本机电脑对应的字体名
-%% 其中：
-%% 		fangfont 为 仿宋字体
-%%		heifont 为 黑体（仅用于标题）
 \documentclass[fangfont=STFANGSO.TTF,heifont=YaHeiConsolas.ttf]{zju-proposal}
 \usepackage{url}
-\title{毕业论文（设计）题目}{浙江大学本科生毕业论文（设计）}
+\usepackage{pdfpages}
+\title{动态因子模型在高维数据中的应用（有监督的动态因子模型预测）}{浙江大学本科生毕业论文（设计）}
+\author{汪利军}{3140105707}
+\grade{14 级}{统计学}
+\mentor{张荣茂}
+\school{数学科学学院}
+%\myfonts{STFANGSO.TTF}{YaHeiConsolas.ttf}
 
 \input{math.tex}
-
-\usepackage{lipsum} %% just for test
-
 \begin{document}
 	\makecover
+	\begin{refsection}
 	\input{guide.tex}
-	
+	\thispagestyle{guidepage}
+	\end{refsection}
+	%\setcounter{page}{-3}
 	\tableofcontents
 	
 	\begin{refsection}	
@@ -26,10 +28,29 @@
 	\begin{refsection}
 	\input{Proposal.tex}
 	\end{refsection}
-	
+	\begin{refsection}
 	\input{Translation.tex}
-	
+	\end{refsection}
 	\input{Original.tex}
 	
-	\input{check.tex} 
+
+%	\printbibliography
+
+	%\setboolean{@twoside}{false}
+%	\includepdf[fitpaper= true, pages=-,pagecommand={\thispagestyle{}}]{gls-original-2.pdf}
+	\includepdf[scale=0.9,pages=-,pagecommand={\thispagestyle{followingpage}},addtotoc={
+		1, section, 1, Introduction,s1,
+		2, section, 1, The Dynamic Factor Model,s2,
+		3, section, 1, The PC-GLS Estimator,s3,
+		4, section, 1, Asymptotic Distribution of The Two-step PC-GLS Estimator, s4,
+		6, section, 1, Asymptotic Efficiency, s5,
+		7, section, 1, Small Sample Properties,s6,
+		7, subsection, 2, Simulation in a Controlled Environment, s61,
+		8, subsubsection, 3, Autocorrelation and Heteroscedasticity, s62,
+		9, subsubsection, 3, Introducing Cross-Sectional Correlation, s63,
+		10, subsubsection, 3, The Hybrid Estimator, s64,
+		11, subsection, 2, Simulation Based on Stock and Watson's (2005) Dataset, s62,
+		13, section, 1, Conclusion, s7}]{gls-original-2.pdf}
+	\input{check.tex} % just combine
+
 \end{document}
