@@ -10,15 +10,13 @@ before_install:
 script:
 - mkdir _build
 - xelatex -output-directory _build proposal/test.tex
-#before_deploy:
+before_deploy:
   # Set up git user name and tag this commit
-#  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+  - git config --local user.name "TravisCI"
+  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
   api_key:
     secure: QI0d747EcBYLNcMJG0VlygLupWPasJE4Qn5Qxh7B2HDcqx3LxWqPbiMl37S84NnX97/VdVEoIhwR3cYSKC2B1C7WN/acdNj12Xh6+vM6fFBljAbFoT+4xW9idO8k25rPcNPlqmxc5wsjo6kr0PrlKnWzbJpSxNbZeBTfnMG3Dzb+dghHMjFKE9K3YsxdhyAa8m1TLdNZKSIOAh9fVwunL1QQ4xlrlM/ZTBtZF7/VYQglxDwBH13lnJW6VQ8Uo745vmHCNarSxHWatqAiI4/JnXiDtKNDDAeqZTAwAZWfIp11nKmOg9X+77HZSpY7cwXpE0zRRrL5AlrFHlR296ipBtPWIuFbBqoVz3H41eiq4/y4EIZ54g/YuqHVnn/zHw6IBBjBBNkiMdk1JBw7onOycUH9y6wabtsfabcXNedAV15xSrgYsmr/ieJL8ctYxHeCq0WnMiJEoCnqoQFF4wZb5/YzAAYAdpUFdnVaqFU1kNdVcauOWovlyZBEDL+9au9QqZXdUt8To6gGkkSlkfJKFtcz8fTkKVRZBjmu3p6plaF6RkRVPPJIq/jHJpRJ5linXsTVdlQ3Wlxz+pqA1kLtzjUlNEymf26C4SUJZ1HAY1Z8OggnHJ9u5QJeGjNlPCLDUKMhtBRT01ove6joPzqtQtlZT+drcIywSRFsmj6zWlk=
   file: _build/test.pdf
   skip_cleanup: true
-  on:
-    repo: szcf-weiya/zju-thesis
-    tags: true
