@@ -10,9 +10,9 @@ before_install:
 script:
 - mkdir _build
 - xelatex -output-directory _build proposal/test.tex
-before_deploy:
+#before_deploy:
   # Set up git user name and tag this commit
-  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+#  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
 deploy:
   provider: releases
   api_key:
