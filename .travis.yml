@@ -13,7 +13,7 @@ before_deploy:
   - git config --local user.name "Travis CI"
   - git config --global user.email "builds@travis-ci.com"
   - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
-  - git push -q https://$TAGPERM@github.com/$TRAVIS_REPO_SLUG --tags
+  #- git push -q https://$TAGPERM@github.com/$TRAVIS_REPO_SLUG --tags
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
