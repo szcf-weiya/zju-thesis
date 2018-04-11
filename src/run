@@ -2,4 +2,4 @@
 latex zju-thesis.ins
 xelatex zju-thesis.dtx
 xelatex zju-thesis.dtx
-rm zju-thesis.sty zju-thesis.cls
+rm -f zju-thesis.cls zju-thesis.sty *.log *.aux *.synctex.gz *.toc *.bbl *.bcf *.blg *.out *.xml *.idx *.dvi *.glo *.hd

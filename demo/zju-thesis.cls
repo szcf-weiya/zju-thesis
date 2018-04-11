@@ -24,10 +24,6 @@
  [2018/04/10 v1.0 Thesis Template for Zhejiang University]
 
 
-
-
-
-
 \hyphenation{zju-thesis}
 \def\zjuthesis{\textsc{zju-thesis}}
 \def\version{1.0}
@@ -277,10 +273,10 @@
 \begingroup
 \begin{center}
 
-\includegraphics[width=0.8\textwidth]{zju-text.png}
+\includegraphics[width=0.8\textwidth]{../assets/zju-text.png}
 \\[1.2\baselineskip]
 {\Huge{\hei\bfseries {本\hp 科\hp 生\hp 毕\hp 业\hp 论\hp 文（设\hp 计） \\[0.8\baselineskip]文献综述和开题报告}}}\\[1.2\baselineskip] % Title
-\includegraphics[width=0.35\textwidth]{xiaohui.jpg}
+\includegraphics[width=0.35\textwidth]{../assets/zju-xiaohui.jpg}
 \vspace*{3\baselineskip} % Whitespace between
 \begin{table}[h!]
   \begin{center}
@@ -304,10 +300,10 @@
 \begingroup
 \begin{center}
 
-\includegraphics[width=0.8\textwidth]{zju-text.png}
+\includegraphics[width=0.8\textwidth]{../assets/zju-text.png}
 \\[1.2\baselineskip]
 {\Huge{\hei\bfseries {本\hp 科\hp 生\hp 毕\hp 业\hp 论\hp 文（设\hp 计）}}}\\[1.2\baselineskip] % Title
-\includegraphics[width=0.35\textwidth]{xiaohui.jpg}\\[1\baselineskip]
+\includegraphics[width=0.35\textwidth]{../assets/zju-xiaohui.jpg}\\[1\baselineskip]
         \chap{题目}\ \underline{\makebox[8cm][c]{\chap\titleown}} \\[1.2\baselineskip]
 \begin{table}[h!]
   \begin{center}

@@ -4,4 +4,4 @@ all:
 	xelatex main
 	xelatex main
 clean:
-	rm -f *.log *.aux *.synctex.gz *.toc *.bbl *.bcf *.blg *.out *.xml
+	rm -f *.log *.aux *.synctex.gz *.toc *.bbl *.bcf *.blg *.out *.xml *.ptc
