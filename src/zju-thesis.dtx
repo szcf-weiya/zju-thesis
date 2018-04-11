@@ -104,23 +104,42 @@
 %
 % \section{模板安装}
 % \subsection{下载模板}
-% 源码托管在 GitHub 上，可以选择 git clone 或直接下载压缩包文件。文件组成如下
+% \subsubsection{Sourceforge（推荐）}
+% 将打包好的模板文件上传至 Sourceforge，该压缩文件会与 Github 的更新保持自动同步。下载地址：\href{https://sourceforge.net/projects/zjuthesis/files/v1.0/zju-thesis_v1.0.tar.gz/download}{zju-thesis\_vX.Y.tar.gz}\footnote{vX.Y为版本号，链接提供的版本为 v1.0。}。解压缩文件后，会发现文件组成为
 % \vspace*{1\baselineskip}
 % \begin{nodeC}
-% \item{zju-thesis}
+% \item{zju-thesis\_vX.Y}
 % \begin{nodeC}
 %   \item{src/：源码文件夹}
 %   \begin{nodeC}
 %     \item{zju-thesis.ins：DocStrip 驱动文件（开发用）}
 %     \item{zju-thesis.dtx：DocStrip 源文件（开发用）}
-%     \item{zju-thesis.cls：模板类文件}
+%     \item{zju-thesis.cls：模板类文件（可以运行make 重新生成）}
 %     \item{zju-thesis.pdf：用户手册（本文档）}
+%     \item{Makefile}
 %   \end{nodeC}
 %   \item{demo/：示例文件夹}
+%   \begin{nodeC}
+%     \item{zju-thesis.cls：模板类文件（从 src/ 复制过来的）}
+%     \item{main.pdf：生成的示例主文档}
+%     \item{main.tex：示例 tex 文件}
+%     \item{thesis.tex：论文的第一部分}
+%     \item{ref.bib：参考文献}
+%     \item{math.tex：定义常用的数学 tex 命令}
+%     \item{Makefile}
+%   \end{nodeC}
 %   \item{assets/：存放主文档中需要插入的文件}
-%   \item{proposal/：开题报告模板 (deparcated)}
+%   \begin{nodeC}
+%     \item{official-1-task.pdf：官方任务书模板}
+%     \item{official-11-assess.pdf：官方考核页模板}
+%     \item{zju-text.png：“浙江大学”图标}
+%     \item{zju-xiaohui.jpg：“浙江大学”校徽}
+%     \item{proposal.pdf：已完成的文献综述、开题报告及外文翻译的三合一文件}
+%   \end{nodeC}
 % \end{nodeC}
 % \end{nodeC}
+% \subsubsection{Github}
+% 源码托管在 GitHub 上，可以选择 git clone 或直接下载压缩包文件。仓库地址：\href{https://github.com/szcf-weiya/zju-thesis}{szcf-weiya/zju-thesis}。
 %\subsection{生成模板}
 
 %\subsubsection{Linux 和 Mac}
