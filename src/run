@@ -1,0 +1,5 @@
+#!/bin/bash
+latex zju-thesis.ins
+xelatex zju-thesis.dtx
+xelatex zju-thesis.dtx
+rm zju-thesis.sty zju-thesis.cls
