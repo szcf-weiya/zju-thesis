@@ -65,11 +65,12 @@
         \CJKfontspec[AutoFakeBold=false]{\heifont}\bfseries}
 \newcommand{\partfangfont}{\fontsize{36pt}{\baselineskip}
         \CJKfontspec[AutoFakeBold=4]{\fangfont}\bfseries}
+\newcommand{\sanhao}{\fontsize{16pt}{\baselineskip}\selectfont}
 \newcommand{\chap}{\@ifstar%
-    {\fontsize{16pt}{\baselineskip}\CJKfontspec[AutoFakeBold=false]{\fangfont}\bfseries}
+    {\fontsize{16pt}{\baselineskip}\CJKfontspec[AutoFakeBold=false]{\fangfont}\sanhao}
     {\fontsize{16pt}{\baselineskip}\CJKfontspec[AutoFakeBold=4]{\fangfont}\bfseries}}
 \newcommand{\sect}{\@ifstar%
-    {\fontsize{15pt}{\baselineskip}\CJKfontspec[AutoFakeBold=false]{\fangfont}\bfseries}
+    {\fontsize{15pt}{\baselineskip}\CJKfontspec[AutoFakeBold=false]{\fangfont}}
     {\fontsize{15pt}{\baselineskip}\CJKfontspec[AutoFakeBold=4]{\fangfont}\bfseries}}
 \newcommand{\subsec}{\@ifstar
     {\fontsize{14pt}{\baselineskip}\CJKfontspec[AutoFakeBold=false]{\fangfont}\bfseries}
@@ -281,10 +282,10 @@
 \begin{table}[h!]
   \begin{center}
 \begin{tabular}{ll}
-\subsec{姓名与学号} & \underline{\makebox[5cm][c]{\name (\stuid)}}  \\[5ex]
-\subsec{指导教师} & \underline{\makebox[5cm][c]{\mentor}}\\[5ex]
-\subsec{年级与专业} & \underline{\makebox[5cm][c]{\grade\major}}\\[5ex]
-\subsec{所在学院} & \underline{\makebox[5cm][c]{\school}}\\[5ex]
+\subsec{姓名与学号} & \underline{\makebox[7cm][c]{\name (\stuid)}}  \\[5ex]
+\subsec{指导教师} & \underline{\makebox[7cm][c]{\mentor}}\\[5ex]
+\subsec{年级与专业} & \underline{\makebox[7cm][c]{\grade\major}}\\[5ex]
+\subsec{所在学院} & \underline{\makebox[7cm][c]{\school}}\\[5ex]
 \end{tabular}
 \end{center}
 \end{table}
@@ -303,16 +304,16 @@
 \includegraphics[width=0.8\textwidth]{../assets/zju-text.png}
 \\[1.2\baselineskip]
 {\Huge{\hei\bfseries {本\hp 科\hp 生\hp 毕\hp 业\hp 论\hp 文（设\hp 计）}}}\\[1.2\baselineskip] % Title
-\includegraphics[width=0.35\textwidth]{../assets/zju-xiaohui.jpg}\\[1\baselineskip]
-        \chap{题目}\ \underline{\makebox[8cm][c]{\chap\titleown}} \\[1.2\baselineskip]
+\includegraphics[width=0.32\textwidth]{../assets/zju-xiaohui.jpg}\\[1\baselineskip]
+        \chap{题目}\ \underline{\makebox[11cm][c]{\chap\titleown}} \\[1.8\baselineskip]
 \begin{table}[h!]
   \begin{center}
 \begin{tabular}{ll}
-\chap{姓名与学号} & \underline{\makebox[5cm][c]{\chap*{\name \stuid}}}  \\[4ex]
-\chap{指导教师} & \underline{\makebox[5cm][c]{\chap*{\mentor}}}\\[4ex]
-\chap{年级与专业} & \underline{\makebox[5cm][c]{\chap*{\grade\major}}}\\[4ex]
-\chap{所在学院} & \underline{\makebox[5cm][c]{\chap*{\school}}}\\[8ex]
-            \chap{提交日期} & \underline{\makebox[5cm][c]{\chap*{\date}}}\\[4ex]
+\chap{姓名与学号} & \underline{\makebox[7cm][c]{\chap*{\name \stuid}}}  \\[4ex]
+\chap{指导教师} & \underline{\makebox[7cm][c]{\chap*{\mentor}}}\\[4ex]
+\chap{年级与专业} & \underline{\makebox[7cm][c]{\chap*{\grade\major}}}\\[4ex]
+\chap{所在学院} & \underline{\makebox[7cm][c]{\chap*{\school}}}\\[8ex]
+            \chap{提交日期} & \underline{\makebox[7cm][c]{\chap*{\date}}}\\[4ex]
 \end{tabular}
 \end{center}
 \end{table}
