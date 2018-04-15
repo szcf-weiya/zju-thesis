@@ -15,7 +15,7 @@ deploy:
   provider: releases
   api_key:
     secure: 0Twccv1DolhzF8qaM6dHLhkDnNnXfbgq6p70nJgNr3SLdW5ujgQpNiwWakUGsrvsivAXmDg7GjOkbrfEwvEsReawWLwE5SJb0P51JrQr43ikOauVeB2n1xo9qfn30v5FKzJmEYnrXQBkptuSjh54SXdVC4VVIg7bmmBD8EkTtDlpgStcZMKpIFVKnlNFnXQgsD3f8zVMfUrZuFPgKZ1OTuSdhjC5dvwYRCDW+RfW5c3D6koFAcAyqDaz/N80LbbMAW8/CJtS+LKeRBMNqQAB89X9wYT3ctYpyBPbd3P61jEQmF0ZbNENID1qCig/gmodj/OZxVTRyNjBA+fsgw+1nsAZsxSthoFWSPzGeUfHWuEM0oLcZEG/V+6ruBWgYEkFq/eBHLSJ7gX9fE5nyrlhzxQDkRI+JA99AQ5P5Hp20MerHZKtPk/84mHj6bWXLqTXSrjsFdELMu7MsQRaavI9Un4b7e33Tl/8CCySjqWdrBn3S/28slHtCIuAEyTtzG9AKnKStGRd6iuSt+tiTJqKZrSq1Nfe2zh3nCtQtJ6uD54XOg1pG2BratNKfPfqKSAqzHiAM5xqW655zP/LTMO6egV6rIP7LmAtfDgOfBL8kWlxa/GxxBqix7mu4lL7nwfMi4wNHIaRIjtt0+QLgAbGveMZaL5EES1/BULHGY3l95Y=
-  file: zju-thesis_v*.tar.gz
+  file: zju-thesis_v.*.*.tar.gz
   skip_cleanup: true
   on:
     branch: master
