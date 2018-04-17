@@ -10,7 +10,7 @@ before_install:
 script:
 - make -C demo/ && make -C demo/ clean 
 - bash release.sh
-- mkdir site && cp src/zju-thesis.pdf site/
+- mkdir -p site/src && cp src/zju-thesis.pdf site/src/
 deploy:
   - provider: releases
     api_key:
