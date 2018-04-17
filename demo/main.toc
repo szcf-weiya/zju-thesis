@@ -1,0 +1,44 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{1}\relax 
+\contentsline {part}{第一部分\hspace {1em}毕业论文（设计）}{0}
+\defcounter {refsection}{1}\relax 
+\contentsline {chapter}{\numberline {1}绪论（章的标题，三号仿宋加黑）}{1}
+\defcounter {refsection}{1}\relax 
+\contentsline {section}{\numberline {1.1}节的标题（小三号仿宋加黑）}{1}
+\defcounter {refsection}{1}\relax 
+\contentsline {subsection}{\numberline {1.1.1}节的标题（四号仿宋加黑）}{1}
+\defcounter {refsection}{1}\relax 
+\contentsline {subsubsection}{\numberline {1.1.1.1}节的标题，仿宋四号加黑}{1}
+\defcounter {refsection}{1}\relax 
+\contentsline {chapter}{\numberline {2}正文}{2}
+\defcounter {refsection}{1}\relax 
+\contentsline {section}{\numberline {2.1}节的标题（仿宋小三号加黑）}{2}
+\defcounter {refsection}{1}\relax 
+\contentsline {subsection}{\numberline {2.1.1}节的标题（仿宋四号加黑）}{2}
+\defcounter {refsection}{1}\relax 
+\contentsline {section}{\numberline {2.2}结论}{2}
+\defcounter {refsection}{1}\relax 
+\contentsline {chapter}{\numberline {3}参考文献}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {alonepage}{\numberline {1}\ignorespaces 《浙江大学本科生毕业论文（设计）任务书》}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {alonepage}{\numberline {2}\ignorespaces 《浙江大学本科生毕业论文（设计）考核表》}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {part}{第二部分\hspace {1em}文献综述和开题报告}{0}
+\defcounter {refsection}{0}\relax 
+\contentsline {alonepage}{\numberline {3}\ignorespaces 文献综述和开题报告封面}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {alonepage}{\numberline {4}\ignorespaces 指导教师对文献综述和开题报告具体内容要求}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {contabpage}{\numberline {1}\ignorespaces 目录}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {一、}\ignorespaces 文献综述}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {二、}\ignorespaces 开题报告}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {三、}\ignorespaces 外文翻译}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {四、}\ignorespaces 外文原文}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {alonepage}{\numberline {5}\ignorespaces 《浙江大学本科生文献综述和开题报告考核表》}{8}
+\contentsfinish 
