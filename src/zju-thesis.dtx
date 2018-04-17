@@ -669,7 +669,7 @@
 %	}{\titlerule*[1pc]{.} \thecontentspage}
 %    \end{macrocode}
 % \subsection{目录页设置}
-% 目录页的 top margin 太大，适当缩小。\footnote{参考\href{https://tex.stackexchange.com/questions/62125/how-to-remove-top-margin-above-tableofcontents}{spacing - How to remove top margin above \tableofcontents - TeX - LaTeX Stack Exchange}}
+% 目录页的 top margin 太大，适当缩小。\footnote{参考\href{https://tex.stackexchange.com/questions/62125/how-to-remove-top-margin-above-tableofcontents}{spacing - How to remove top margin above tableofcontents - TeX - LaTeX Stack Exchange}}
 %    \begin{macrocode}
 
 \makeatletter
@@ -690,9 +690,10 @@
 \RequirePackage{setspace}
 \spacing{1.5}
 %    \end{macrocode}
-% \subsection{等式编号独立}
+% \subsection{等式编号独立 (deparcated)}
+% 在写三合一文件时，每部分的公式编号是独立的，不过在正式论文中应当取消这个设定。\href{https://github.com/szcf-weiya/zju-thesis/issues/4}{Issue \#4}
 %    \begin{macrocode}
-\renewcommand{\theequation}{\arabic{equation}}
+%\renewcommand{\theequation}{\arabic{equation}}
 %    \end{macrocode}
 % \subsection{首行缩进}
 % 虽然默认段落的首行会缩进，但每节的第一段并没有首行缩进。

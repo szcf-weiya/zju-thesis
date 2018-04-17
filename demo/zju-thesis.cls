@@ -264,7 +264,6 @@
 \renewcommand{\contentsname}{{\centerline{目\hspace*{1em}录}}}
 \RequirePackage{setspace}
 \spacing{1.5}
-\renewcommand{\theequation}{\arabic{equation}}
 \RequirePackage{indentfirst}
 
 \RequirePackage{graphicx}
