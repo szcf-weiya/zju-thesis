@@ -76,6 +76,7 @@
     {\fontsize{14pt}{\baselineskip}\CJKfontspec[AutoFakeBold=false]{\fangfont}\bfseries}
     {\fontsize{14pt}{\baselineskip}\CJKfontspec[AutoFakeBold=4]{\fangfont}\bfseries}}
 \newcommand{\xiaosihao}{\fontsize{12pt}{\baselineskip}\CJKfontspec[AutoFakeBold=false]{\fangfont}}
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\CJKfontspec[AutoFakeBold=false]{\fangfont}}
 \RequirePackage[left=2.5cm,right=2.0cm,top=2.5cm,bottom=2.0cm]{geometry}
 
 \renewcommand{\title}[2]{\gdef\titleown{#1}\gdef\titlezju{#2}}
@@ -116,6 +117,10 @@
 \AtBeginDocument{\thispagestyle{firstpage}}
 \AtBeginDocument{\assignpagestyle{\chapter}{followingpage}}
 \pagestyle{followingpage}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\RequirePackage[labelfont=bf,tableposition=top]{caption}
+\RequirePackage{float}
 \RequirePackage{titlesec}
 \newcommand{\chapterbreak}{\clearpage}
 
