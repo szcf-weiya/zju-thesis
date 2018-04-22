@@ -375,6 +375,21 @@
 %\AtBeginDocument{\assignpagestyle{\guide}{followingpage}}
 \pagestyle{followingpage}
 %    \end{macrocode}
+% \subsection{图表格式}
+% 图表格式的具体要求为
+%
+% \begin{itemize}
+% \item 图标题在图下面，表标题在表上面；
+% \item 图、表标题均采用五号宋体加粗；
+% \item 表格中文字采用5号宋体，行距为单倍行间距；
+% \item 图、表与下文空一行。
+% \end{itemize}
+%    \begin{macrocode}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\RequirePackage[labelfont=bf,tableposition=top]{caption}
+\RequirePackage{float}
+%    \end{macrocode}
 % \subsection{节标题设置}
 % 标题样式的具体要求为
 %
