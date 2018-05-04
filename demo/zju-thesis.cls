@@ -331,7 +331,9 @@
 \RequirePackage{longtable}
 \newcommand\file[1]{\textsf{#1}}
 \RequirePackage{pdfpages}
-
+\RequirePackage[ruled,linesnumbered]{algorithm2e}
+\SetAlgoCaptionSeparator{\quad}
+\SetAlgorithmName{算法}{算法}{算法}
 
 \endinput
 %%
