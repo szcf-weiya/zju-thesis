@@ -104,8 +104,8 @@
 %
 % \section{模板安装}
 % \subsection{下载模板}
-% \subsubsection{Sourceforge（推荐）}
-% 将打包好的模板文件上传至 Sourceforge，该压缩文件会与 Github 的更新保持自动同步。下载地址：\href{https://sourceforge.net/projects/zjuthesis/files/v1.0/zju-thesis_v1.0.tar.gz/download}{zju-thesis\_vX.Y.tar.gz}\footnote{vX.Y为版本号，链接提供的版本为 v1.0。}。解压缩文件后，会发现文件组成为
+% \subsubsection{Release 版（推荐）} 
+% 版本页面为 \href{https://github.com/szcf-weiya/zju-thesis/releases}{zju-thesis releases}，推荐选择最新的版本下载。注意到每个版本都有两个下载地址，一种是直接点击 zju-thesis\_v*.*.*.tar.gz 下载，一种是点击 SourceForge 的绿色按钮进行下载。这两种方式的区别在于，前者托管在 GitHub 上，后者托管在 SourceForge，后者对墙内用户比较友好。解压缩文件后，会发现文件组成为
 % \vspace*{1\baselineskip}
 % \begin{nodeC}
 % \item{zju-thesis\_vX.Y}
@@ -126,7 +126,8 @@
 %     \item{thesis.tex：论文的第一部分}
 %     \item{ref.bib：参考文献}
 %     \item{math.tex：定义常用的数学 tex 命令}
-%     \item{Makefile}
+%     \item{Makefile：适用 Mac 和 Linux 用户}
+%     \item{makezju-thesis.bat：批处理文件，功能等价于 Makefile，适用 Windows 用户}
 %   \end{nodeC}
 %   \item{assets/：存放主文档中需要插入的文件}
 %   \begin{nodeC}
@@ -138,19 +139,20 @@
 %   \end{nodeC}
 % \end{nodeC}
 % \end{nodeC}
-% \subsubsection{Github}
+% \subsubsection{Dev 版}
 % 源码托管在 GitHub 上，可以选择 git clone 或直接下载压缩包文件。仓库地址：\href{https://github.com/szcf-weiya/zju-thesis}{szcf-weiya/zju-thesis}。
-%\subsection{生成模板}
-
+%\subsection{快速开始}
+% 提供了 demo 文件夹，编写自己的文档时，推荐复制整个 demo 文件夹，然后编辑自己的 thesis.tex 主文件。下面以 demo 文件夹为例，说明一下如何编译生成文档。
 %\subsubsection{Linux 和 Mac}
-%直接在终端中运行下面的命令便可以生成 zju-thesis.cls 模板文件。
 % \begin{shell}
-% $ cd zju-thesis
-% # 生成 zju-thesis.cls
-% $ latex zju-thesis
+% $ cd demo
+% # 编译生成 pdf 文件
+% $ make
+% # 清理多余的文件（此步可略去）
+% $ make clean
 % \end{shell}
 % \subsubsection{Windows}
-% 还未测试。
+% 直接双击运行 makezju-thesis.bat 文件便可。
 %\section{使用说明}
 %\subsection{中文字体}
 % 考虑到不同环境的字体名称不同，所以需要设置本机环境中的字体。毕业论文要求的中文字体只有两种，一种是仿宋，一种是黑体（“第一部分”和“第二部分”这两个大标题）。对于 Window 用户，通过查看字体，找到仿宋和黑体的字体名称，分别赋值给 fangfont 和 heifont，具体命令如下：

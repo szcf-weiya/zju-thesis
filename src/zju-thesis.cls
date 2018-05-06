@@ -23,7 +23,6 @@
 \ProvidesClass{zju-thesis}
  [2018/04/10 v1.0 Thesis Template for Zhejiang University]
 
-
 \hyphenation{zju-thesis}
 \def\zjuthesis{\textsc{zju-thesis}}
 \def\version{1.0}
