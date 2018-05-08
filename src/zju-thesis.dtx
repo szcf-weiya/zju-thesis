@@ -721,7 +721,14 @@
 %    \begin{macrocode}
 \RequirePackage{indentfirst}
 %    \end{macrocode}
-
+% \subsection{附录环境}
+% 提供附录环境。
+% \footnote{参考 \href{https://tex.stackexchange.com/questions/49643/making-appendix-for-thesis}{appendices - making appendix for thesis - TeX - LaTeX Stack Exchange}}
+%    \begin{macrocode}
+\RequirePackage[title]{appendix}
+\renewcommand\appendixname{附录}
+\renewcommand\appendixtocname{附录}
+%    \end{macrocode}
 % \subsection{生成封面}
 %  三合一文件需要一个封面，自定义命令 \cs{makecoverprop} 来生成三合一文件的封面。
 % \DescribeMacro{\makecoverprop}

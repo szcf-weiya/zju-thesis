@@ -23,7 +23,6 @@
 \ProvidesClass{zju-thesis}
  [2018/04/10 v1.0 Thesis Template for Zhejiang University]
 
-
 \hyphenation{zju-thesis}
 \def\zjuthesis{\textsc{zju-thesis}}
 \def\version{1.0}
@@ -270,7 +269,9 @@
 \RequirePackage{setspace}
 \spacing{1.5}
 \RequirePackage{indentfirst}
-
+\RequirePackage[title]{appendix}
+\renewcommand\appendixname{附录}
+\renewcommand\appendixtocname{附录}
 \RequirePackage{graphicx}
 \newcommand\hp{\hspace{0.35em}}
 \newcommand*{\makecoverprop}
