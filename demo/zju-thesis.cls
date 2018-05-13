@@ -205,7 +205,6 @@
 \counterwithin{chapter}{part}
 \counterwithin*{page}{part}
 
-\AtBeginDocument{\assignpagestyle{\part}{empty}}
 \renewcommand\thepart{第\zhnum{part}部分}
 \renewcommand{\partname}{}
 \renewcommand{\thechapter}{\arabic{chapter}}
