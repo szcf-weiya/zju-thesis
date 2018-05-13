@@ -104,6 +104,16 @@
 \renewcommand{\footrulewidth}{0pt} % no line
 \fancyhead[R]{\titleown}
 }
+\fancypagestyle{promise}{%
+\fancyhf{} % clear fields
+\fancyhead[RO]{\titleown}
+\fancyhead[LE]{\titlezju}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.7pt}
+\renewcommand{\footrulewidth}{0pt}
+  \pagenumbering{Roman}
+}
+
 \fancypagestyle{followingpage}{%
 \fancyhf{} % clear fields
 \fancyhead[RO]{\titleown}
@@ -115,12 +125,13 @@
 
 \AtBeginDocument{\thispagestyle{firstpage}}
 \AtBeginDocument{\assignpagestyle{\chapter}{followingpage}}
+\AtBeginDocument{\assignpagestyle{\part}{firstpage}}
 \pagestyle{followingpage}
 \renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}
 \RequirePackage[labelfont=bf,tableposition=top]{caption}
 \RequirePackage{float}
-\RequirePackage{titlesec}
+\RequirePackage[explicit]{titlesec}
 \newcommand{\chapterbreak}{\clearpage}
 
 \renewcommand\section{\@startsection
@@ -191,16 +202,12 @@
   \section{#1}%
   \markboth{#1}{#1}}
 \RequirePackage{zhnumber}
-\RequirePackage{chngcntr}
-\counterwithin{chapter}{part}
-\counterwithin*{page}{part}
 
-\AtBeginDocument{\assignpagestyle{\part}{firstpage}}
 \renewcommand\thepart{第\zhnum{part}部分}
 \renewcommand{\partname}{}
 \renewcommand{\thechapter}{\arabic{chapter}}
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
-\titleformat{\chapter}{\chap}{\thechapter}{1em}{}
+\titleformat{\chapter}{\chap}{\thechapter}{1em}{#1}
 \titlespacing*{\chapter}{0pt}{0pt}{2.3ex plus .2ex}
 
 \makeatletter
@@ -221,7 +228,7 @@
     \vskip 72\p@
     \fi
     {\partfangfont #2}\par}%
-    \@endpart}
+    \@endpart\pagenumbering{arabic}} % add 20180513 20:58
 \makeatother
 
 
@@ -253,6 +260,18 @@
 \titlecontents{subsubsection}[4pc]{\small}{\makebox[0pt][l]{\hspace{-4pc}\thecontentslabel}}{
 }{\titlerule*[1pc]{.} \thecontentspage}
 
+\titleformat{name=\chapter,numberless}{\chap\centering}{}{1em}{#1}
+\preto{\chapter}{\def\leveltitle{\chaptertitle}}
+\pretocmd{\@schapter}
+  {\expandafter\gdef\leveltitle{#1}}
+  {}{}
+\newcommand{\keywords}[1]{%
+  \ifthenelse{\equal{\chaptertitle}{Abstract}}{%
+    \textbf{Key Words：}#1
+  }{%
+    \textbf{关键字：}#1
+  }
+}
 
 \makeatletter
 \let\oldtableofcontents\tableofcontents
@@ -328,7 +347,6 @@
 \endgroup
 \clearpage
 }
-\setcounter{page}{-1}
 \RequirePackage{longtable}
 \newcommand\file[1]{\textsf{#1}}
 \RequirePackage{pdfpages}

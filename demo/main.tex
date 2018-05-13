@@ -14,6 +14,14 @@
 \input{math.tex}
 \begin{document}
 	\makecover
+	% promise page
+	\includepdf[fitpaper=true,pages=-,pagecommand={\thispagestyle{promise}},addtotoc={
+		1, alonepage, 1, 承诺书, promise
+	}]{../assets/promise.pdf}
+	% 
+	\input{thanks.tex}
+	\clearpage
+	\input{abstract.tex}
     \tableofcontents
 	\begin{refsection}
 	\input{thesis.tex}

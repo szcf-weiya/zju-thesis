@@ -364,6 +364,19 @@
 %	\item 偶数页左页眉（浙江大学本科生毕业论文（设计））
 % \end{itemize}
 %    \begin{macrocode}
+\fancypagestyle{promise}{%
+	\fancyhf{} % clear fields
+	% thesis title on the right header on the odd-number pages
+	\fancyhead[RO]{\titleown}
+	\fancyhead[LE]{\titlezju}
+	% official name on the left header of the even-number pages	
+	% page number on the center footer of all pages
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\headrulewidth}{0.7pt}
+	\renewcommand{\footrulewidth}{0pt}
+  \pagenumbering{Roman}
+}
+
 \fancypagestyle{followingpage}{%
 	\fancyhf{} % clear fields
 	% thesis title on the right header on the odd-number pages
@@ -407,7 +420,7 @@
 % \end{itemize}
 % 
 %    \begin{macrocode}
-\RequirePackage{titlesec}
+\RequirePackage[explicit]{titlesec}
 \newcommand{\chapterbreak}{\clearpage}
 
 \renewcommand\section{\@startsection
@@ -507,7 +520,7 @@
 %    \begin{macrocode}
 \renewcommand{\thechapter}{\arabic{chapter}}
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
-\titleformat{\chapter}{\chap}{\thechapter}{1em}{}
+\titleformat{\chapter}{\chap}{\thechapter}{1em}{#1}
 \titlespacing*{\chapter}{0pt}{0pt}{2.3ex plus .2ex}
 
 \makeatletter
@@ -528,7 +541,7 @@
     \vskip 72\p@
     \fi
     {\partfangfont #2}\par}%
-    \@endpart}
+    \@endpart\pagenumbering{arabic}} % add 20180513 20:58
 \makeatother
 %    \end{macrocode}
 % 第二部分三合一文件需要中文编号，但第一部分正文不需要中文编号。且对第一个 part 需要设置左对齐的 chapter，对第二个 part 设置居中的 chapter 格式。所以我们对这两个部分的 chapter 单独设置格式。因为 \cs{titlesec} 可以放在任意地方，因此最简单的方法便是在 tex 文档中的每个 part 部分手动设置 \cs{titlesec}，但还是想将其封装到 .cls 文件中。想法是自定义依赖于具体 part 编号的 \cs{mypart} 命令，然后将该命令插入到对应的 part 之后。对于插入的位置，我选择重定义 \cs{part}，将 \cs{mypart} 包含其中。
@@ -689,6 +702,25 @@
 %\titlecontents{subsubsection}[3pc]{\small}{\thecontentslabel}{
 %	}{\titlerule*[1pc]{.} \thecontentspage}
 %    \end{macrocode}
+% \subsection{致谢和摘要}
+% 要求居中，格式与章节同，考虑定义星号版的 \cs{chapter}。\footnote{参考\href{https://tex.stackexchange.com/questions/102116/titlesec-and-section-in-titleformat}{titlesec and \cs{section*} in \cs{titleformat}}}
+%    \begin{macrocode}
+\titleformat{name=\chapter,numberless}{\chap\centering}{}{1em}{#1}
+%    \end{macrocode}
+% 摘要后面的关键词
+%    \begin{macrocode}
+\preto{\chapter}{\def\leveltitle{\chaptertitle}}
+\pretocmd{\@schapter}
+  {\expandafter\gdef\leveltitle{#1}}
+  {}{}
+\newcommand{\keywords}[1]{%
+  \ifthenelse{\equal{\chaptertitle}{Abstract}}{%
+    \textbf{Key Words：}#1
+  }{%
+    \textbf{关键字：}#1    
+  }
+}
+%    \end{macrocode}
 % \subsection{目录页设置}
 % 目录页的 top margin 太大，适当缩小。\footnote{参考\href{https://tex.stackexchange.com/questions/62125/how-to-remove-top-margin-above-tableofcontents}{spacing - How to remove top margin above tableofcontents - TeX - LaTeX Stack Exchange}}
 %    \begin{macrocode}
@@ -804,7 +836,7 @@
 }
 %    \end{macrocode}
 %    \begin{macrocode}
-\setcounter{page}{-1}
+%\setcounter{page}{-1}# comment out at 20180513 20:33
 \RequirePackage{longtable}
 \newcommand\file[1]{\textsf{#1}}
 %    \end{macrocode}
