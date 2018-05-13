@@ -125,7 +125,6 @@
 
 \AtBeginDocument{\thispagestyle{firstpage}}
 \AtBeginDocument{\assignpagestyle{\chapter}{followingpage}}
-\AtBeginDocument{\assignpagestyle{\part}{firstpage}}
 \pagestyle{followingpage}
 \renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}
@@ -202,7 +201,11 @@
   \section{#1}%
   \markboth{#1}{#1}}
 \RequirePackage{zhnumber}
+\RequirePackage{chngcntr}
+\counterwithin{chapter}{part}
+\counterwithin*{page}{part}
 
+\AtBeginDocument{\assignpagestyle{\part}{empty}}
 \renewcommand\thepart{第\zhnum{part}部分}
 \renewcommand{\partname}{}
 \renewcommand{\thechapter}{\arabic{chapter}}
@@ -211,6 +214,22 @@
 \titlespacing*{\chapter}{0pt}{0pt}{2.3ex plus .2ex}
 
 \makeatletter
+\renewcommand{\part}{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi%
+  \thispagestyle{empty}%
+  \if@twocolumn
+    \onecolumn
+    \@tempswatrue
+  \else
+    \@tempswafalse
+  \fi%
+  \null\vfil%
+  \secdef\@part\@spart%
+}
 \def\@part[#1]#2{%
     \ifnum \c@secnumdepth >-2\relax
         \refstepcounter{part}%

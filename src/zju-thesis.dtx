@@ -510,7 +510,7 @@
 \counterwithin{chapter}{part}
 \counterwithin*{page}{part}
 
-\AtBeginDocument{\assignpagestyle{\part}{firstpage}}
+\AtBeginDocument{\assignpagestyle{\part}{empty}}
 \renewcommand\thepart{第\zhnum{part}部分} 
 \renewcommand{\partname}{}
 %\titleformat{\part}[display]{\partheifont\normalfont\Huge}{{\thepart}}{72pt}{\Huge}
@@ -524,6 +524,22 @@
 \titlespacing*{\chapter}{0pt}{0pt}{2.3ex plus .2ex}
 
 \makeatletter
+\renewcommand{\part}{%
+  \if@openright
+    \cleardoublepage
+  \else
+    \clearpage
+  \fi%
+  \thispagestyle{empty}%
+  \if@twocolumn
+    \onecolumn
+    \@tempswatrue
+  \else
+    \@tempswafalse
+  \fi%
+  \null\vfil%
+  \secdef\@part\@spart%
+}
 \def\@part[#1]#2{%
     \ifnum \c@secnumdepth >-2\relax
         \refstepcounter{part}%
