@@ -195,6 +195,18 @@
 % \subsection{作者简介}
 % 编辑 resume.tex 文件即可。
 % \subsection{文献引用}
+% 默认采用著作者年份格式，并且默认颜色为蓝色，用户可以根据需要进行自定义。
+% \subsubsection{编号格式}
+% 如果想用编号格式，则需要传入 numbib 参数，即
+% \begin{latex}
+% \documentclass[fangfont=STFANGSO.TTF,heifont=simhei.ttf,blind,numbib]{zju-thesis}
+% \end{latex}
+% 默认\cs{cite}的编号不会显示在右上角，但本模板提供了 \cs{upcite} 命令，可以使得编号位于右上角。
+% \subsubsection{颜色设置}
+% 默认为蓝色，如需要取消，只需要传入 nocolorbib 参数，即
+% \begin{latex}
+% \documentclass[fangfont=STFANGSO.TTF,heifont=simhei.ttf,blind,nocolorbib]{zju-thesis}
+% \end{latex}
 % \subsubsection{独立引用}
 % 在文献综述、开题报告及文献翻译的三合一文件中，其中文献综述和开题报告的文献是独立引用的，也就是每一章有各自的文献。利用 biblatex 的 \cs{refsection} 环境，实现方案如下：
 % \begin{latex}
@@ -250,13 +262,19 @@
 \newif\ifzju@fang 
 \newif\ifzju@hei
 \newif\ifzju@blind
+\newif\ifzju@numbib
+\newif\ifzju@nocolorbib
 \zju@fangfalse
 \zju@heifalse
 \zju@blindfalse
+\zju@numbibfalse
+\zju@nocolorbibtrue
 \RequirePackage{ifthen}
 \DeclareOptionX{fangfont}{\def\fangfont{#1}\zju@fangtrue}%
 \DeclareOptionX{heifont}{\def\heifont{#1}\zju@heitrue}%
 \DeclareOptionX{blind}{\zju@blindtrue}
+\DeclareOptionX{numbib}{\zju@numbibtrue}
+\DeclareOptionX{nocolorbib}{\zju@nocolorbibfalse}
 %\ExecuteOptionsX{fangfont,heifont}
 \ProcessOptionsX%
 \ifzju@fang\relax\else
@@ -450,11 +468,15 @@
 %    \begin{macrocode}
 \RequirePackage{csquotes}
 \RequirePackage{xcolor} % DO NOT forget
+\ifzju@numbib%
+\RequirePackage[backend=biber]{biblatex}
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+\else
 \RequirePackage[backend=biber,citestyle=authoryear,sortcites=true,natbib]{biblatex}
 %% set citation color as blue
 %\renewcommand\nametitledelim{\ifin{textcite}{\addspace}{\addspace\addcomma}}
 \DeclareCiteCommand{\cite}
-  {\color{blue}\usebibmacro{prenote}}%
+  {\ifzju@nocolorbib\color{blue}\fi\usebibmacro{prenote}}%
   {\usebibmacro{citeindex}%
    \usebibmacro{cite}}
   {\multicitedelim}
@@ -466,7 +488,7 @@
   {\multicitedelim}
   {\usebibmacro{postnote}}
 \DeclareCiteCommand{\textcite}
-  {\color{blue}
+  {\ifzju@nocolorbib\color{blue}\fi
 	  \renewcommand*\nameyeardelim{\addspace}%
 	  \boolfalse{cbx:parens}%
    \renewcommand*{\finalnamedelim}{% <---- this is new
@@ -485,12 +507,14 @@
 \makeatletter
 \newrobustcmd{\mkcolorbibparens}[1]{%
 	\begingroup
-	\color{blue}%
+  \ifzju@nocolorbib\color{blue}\fi
+	%\color{blue}%
 	\blx@blxinit
 	\blx@setsfcodes
 	\bibopenparen#1\bibcloseparen
 	\endgroup}
 \makeatother
+\fi
 %\patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
 \bibliography{ref.bib}
 \addbibresource{ref.bib}
