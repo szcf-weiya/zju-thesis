@@ -371,6 +371,7 @@
 \RequirePackage[ruled,linesnumbered]{algorithm2e}
 \SetAlgoCaptionSeparator{\quad}
 \SetAlgorithmName{算法}{算法}{算法}
+\RequirePackage{enumitem}
 
 \endinput
 %%
