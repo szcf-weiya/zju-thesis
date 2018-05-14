@@ -492,6 +492,7 @@
 % \subsection{文献引用}
 % 提供三种文献引用的格式 \cs{cite}，\cs{parencite} 以及 \cs{textcite}，并且默认用蓝色高亮（是否需要？）
 %    \begin{macrocode}
+\RequirePackage[american]{babel}
 \RequirePackage{csquotes}
 \RequirePackage{xcolor} % DO NOT forget
 \ifzju@numbib%
@@ -541,6 +542,7 @@
 	\endgroup}
 \makeatother
 \fi
+\DeclareLanguageMapping{american}{american-apa}
 %\patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
 \bibliography{ref.bib}
 \addbibresource{ref.bib}
@@ -568,7 +570,8 @@
 
 %\AtBeginDocument{\assignpagestyle{\part}{empty}}
 \renewcommand\thepart{第\zhnum{part}部分} 
-\renewcommand{\partname}{}
+%\renewcommand{\partname}{}
+\addto\captionsamerican{\renewcommand{\partname}{}}
 %\titleformat{\part}[display]{\partheifont\normalfont\Huge}{{\thepart}}{72pt}{\Huge}
 %    \end{macrocode}
 %   \subsubsection{独立样式(deparcated)}
@@ -828,7 +831,8 @@
   \endgroup%
 }
 \makeatother
-\renewcommand{\contentsname}{{\centerline{目\hspace*{1em}录}}}
+\addto\captionsamerican{\renewcommand{\contentsname}{\centerline{目\hspace*{1em}录}}}
+%\renewcommand{\contentsname}{{\centerline{目\hspace*{1em}录}}}
 %    \end{macrocode}
 % \subsection{行距设置}
 %    \begin{macrocode}

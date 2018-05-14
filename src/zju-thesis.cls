@@ -156,6 +156,7 @@
 {-3.25ex\@plus -1ex \@minus -.2ex}%             beforeskip
 {1.5ex \@plus .2ex}%            afterskip
 {\subsec}}% style
+\RequirePackage[american]{babel}
 \RequirePackage{csquotes}
 \RequirePackage{xcolor} % DO NOT forget
 \ifzju@numbib%
@@ -203,6 +204,7 @@
 \endgroup}
 \makeatother
 \fi
+\DeclareLanguageMapping{american}{american-apa}
 \bibliography{ref.bib}
 \addbibresource{ref.bib}
 \defbibheading{chapbib}[参考文献]{%
@@ -219,7 +221,7 @@
 \counterwithin*{page}{part}
 
 \renewcommand\thepart{第\zhnum{part}部分}
-\renewcommand{\partname}{}
+\addto\captionsamerican{\renewcommand{\partname}{}}
 \renewcommand{\thechapter}{\arabic{chapter}}
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
 \titleformat{\chapter}{\chap}{\thechapter}{1em}{#1}
@@ -329,7 +331,7 @@
   \endgroup%
 }
 \makeatother
-\renewcommand{\contentsname}{{\centerline{目\hspace*{1em}录}}}
+\addto\captionsamerican{\renewcommand{\contentsname}{\centerline{目\hspace*{1em}录}}}
 \RequirePackage{setspace}
 \spacing{1.5}
 \RequirePackage{indentfirst}
