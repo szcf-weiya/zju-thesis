@@ -190,10 +190,33 @@
 % \documentclass[fangfont=STFANGSO.TTF,heifont=simhei.ttf,blind]{zju-thesis}
 % \end{latex}
 % 当然，有无盲审对“提交日期”的显示无影响。
+% \subsection{致谢页}
+% \begin{latex}
+% \begin{acknowledgement}
+% 感谢有你！
+% \end{acknowledgement}
+% \end{latex}
 % \subsection{摘要}
-% 编辑 abstract.tex 文件即可。
-% \subsection{作者简介}
-% 编辑 resume.tex 文件即可。
+% 中文摘要如下：
+% \begin{latex}
+% \begin{abstract}
+% 月色正朦胧，与清风把酒相送...
+% \keywords{醉清风，飞蛾扑火}
+% \end{abstract}
+% \end{latex}
+% 因为有中文摘要和英文摘要之分，使用参数 en 将使用英文摘要，而且关键字自动切换为英文，即
+% \begin{latex}
+% \begin{abstract}[en]
+% Hello world!
+% \keywords{thesis, math}
+% \end{abstract}
+% \end{latex}
+% \subsection{作者简历}
+% \begin{latex}
+% \begin{resume}
+% 书写你的精彩！
+% \end{resume}
+% \end{latex}
 % \subsection{文献引用}
 % 默认采用著作者年份格式，并且默认颜色为蓝色，用户可以根据需要进行自定义。
 % \subsubsection{编号格式}
