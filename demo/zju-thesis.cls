@@ -206,7 +206,7 @@
 \bibliography{ref.bib}
 \addbibresource{ref.bib}
 \defbibheading{chapbib}[参考文献]{%
-  \chapter{#1}%
+  \chapter*{#1}%
   \markboth{#1}{#1}}
 \defbibheading{secbib}[参考文献]{%
   \section{#1}%

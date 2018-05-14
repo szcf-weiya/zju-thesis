@@ -523,7 +523,7 @@
 % 定义两种格式的参考文献标题，一种是以 chapter 形式出现，如第一部分，第二种是以 section 形式出现，如第二部分。
 %    \begin{macrocode}
 \defbibheading{chapbib}[参考文献]{%
-  \chapter{#1}%
+  \chapter*{#1}%
   \markboth{#1}{#1}}
 \defbibheading{secbib}[参考文献]{%
   \section{#1}%
