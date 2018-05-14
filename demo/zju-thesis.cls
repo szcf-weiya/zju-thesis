@@ -383,6 +383,15 @@
 \SetAlgoCaptionSeparator{\quad}
 \SetAlgorithmName{算法}{算法}{算法}
 \RequirePackage{enumitem}
+\RequirePackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}
+\newtheorem{lemma}{引理}
+\newtheorem{prop}{命题}
+\theoremstyle{definition}
+\newtheorem{assump}{假设}
+\newtheorem{definition}{定义}
+\newtheorem{corollary}{推论}
 
 \endinput
 %%
