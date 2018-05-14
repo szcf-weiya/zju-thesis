@@ -524,6 +524,8 @@
 %    \begin{macrocode}
 \defbibheading{chapbib}[参考文献]{%
   \chapter*{#1}%
+  %\addtocontents{toc}{\protect\contentsline{chapter}{\protect\numberline{}参考文献}{}}
+  \addcontentsline{toc}{chapter}{参考文献}
   \markboth{#1}{#1}}
 \defbibheading{secbib}[参考文献]{%
   \section{#1}%
@@ -765,6 +767,26 @@
   }
 }
 %    \end{macrocode}
+% 摘要环境
+%    \begin{macrocode}
+\newenvironment{abstract}[1][zh]{%
+  \ifthenelse{\equal{#1}{en}}{%
+    	\chapter*{Abstract}
+  }{%
+      \chapter*{摘要}
+      %\addcontentsline{toc}{chapter}{摘要}
+  }
+}{%
+}
+%    \end{macrocode}
+% 致谢环境。
+%    \begin{macrocode}
+\newenvironment{acknowledgement}{%
+  \chapter*{致谢}
+  %\addcontentsline{toc}{chapter}{致谢}
+}{%
+}
+%    \end{macrocode}
 % \subsection{目录页设置}
 % 目录页的 top margin 太大，适当缩小。\footnote{参考\href{https://tex.stackexchange.com/questions/62125/how-to-remove-top-margin-above-tableofcontents}{spacing - How to remove top margin above tableofcontents - TeX - LaTeX Stack Exchange}}
 %    \begin{macrocode}
@@ -804,6 +826,24 @@
 \RequirePackage[title]{appendix}
 \renewcommand\appendixname{附录}
 \renewcommand\appendixtocname{附录}
+%    \end{macrocode}
+% 附录不换页。\footnote{参考\href{https://tex.stackexchange.com/questions/24066/start-new-chapter-on-same-page}{sectioning - Start new chapter on same page - TeX - LaTeX Stack Exchange}}
+%    \begin{macrocode}
+\AtBeginEnvironment{appendices}{\let\clearpage\relax}
+%    \end{macrocode}
+% 附录页在目录中的显示。\footnote{参考\href{https://tex.stackexchange.com/questions/290973/hide-sections-of-specific-chapter-from-table-of-contents}{sectioning - Hide sections of specific chapter from table of contents - TeX - LaTeX Stack Exchange}}
+%    \begin{macrocode}
+%\BeforeBeginEnvironment{appendices}{\addtocontents{toc}{\protect\contentsline{alonepage}{\protect\numberline{}附录}{}}\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}}
+\BeforeBeginEnvironment{appendices}{\addcontentsline{toc}{chapter}{附录}\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}}
+\AfterEndEnvironment{appendices}{\addtocontents{toc}{\protect\setcounter{tocdepth}{6}}}
+%    \end{macrocode}
+% \subsection{作者简历}
+%    \begin{macrocode}
+\newenvironment{resume}
+{
+  \chapter*{作者简历}
+  \addcontentsline{toc}{chapter}{作者简历}
+}{}
 %    \end{macrocode}
 % \subsection{生成封面}
 %  三合一文件需要一个封面，自定义命令 \cs{makecoverprop} 来生成三合一文件的封面。

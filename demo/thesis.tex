@@ -99,11 +99,13 @@ $RemoveFromMin(x)$\;
 \end{algorithm}
 \section{结论}
 \counterwithin*{chapter}{part}
-\chapter{附录}
-\begin{subappendices}
-\section{定理一的证明}
-\section{定理二的证明}
-\end{subappendices}
 
 
 \printbibliography[heading=chapbib]
+\chapter*{附录}
+
+%\let\clearpage\relax
+\begin{appendices}
+\chapter{定理证明}
+\chapter{数据获取}
+\end{appendices}

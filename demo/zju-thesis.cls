@@ -207,6 +207,8 @@
 \addbibresource{ref.bib}
 \defbibheading{chapbib}[参考文献]{%
   \chapter*{#1}%
+  %\addtocontents{toc}{\protect\contentsline{chapter}{\protect\numberline{}参考文献}{}}
+  \addcontentsline{toc}{chapter}{参考文献}
   \markboth{#1}{#1}}
 \defbibheading{secbib}[参考文献]{%
   \section{#1}%
@@ -301,6 +303,20 @@
     \textbf{关键字：}#1
   }
 }
+\newenvironment{abstract}[1][zh]{%
+  \ifthenelse{\equal{#1}{en}}{%
+     \chapter*{Abstract}
+  }{%
+      \chapter*{摘要}
+      %\addcontentsline{toc}{chapter}{摘要}
+  }
+}{%
+}
+\newenvironment{acknowledgement}{%
+  \chapter*{致谢}
+  %\addcontentsline{toc}{chapter}{致谢}
+}{%
+}
 
 \makeatletter
 \let\oldtableofcontents\tableofcontents
@@ -320,6 +336,14 @@
 \RequirePackage[title]{appendix}
 \renewcommand\appendixname{附录}
 \renewcommand\appendixtocname{附录}
+\AtBeginEnvironment{appendices}{\let\clearpage\relax}
+\BeforeBeginEnvironment{appendices}{\addcontentsline{toc}{chapter}{附录}\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}}
+\AfterEndEnvironment{appendices}{\addtocontents{toc}{\protect\setcounter{tocdepth}{6}}}
+\newenvironment{resume}
+{
+  \chapter*{作者简历}
+  \addcontentsline{toc}{chapter}{作者简历}
+}{}
 \RequirePackage{graphicx}
 \newcommand\hp{\hspace{0.35em}}
 \newcommand*{\makecoverprop}

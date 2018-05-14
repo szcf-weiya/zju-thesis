@@ -15,19 +15,48 @@
 \begin{document}
 	\makecover
 	% promise page
-	\includepdf[fitpaper=true,pages=-,pagecommand={\thispagestyle{promise}},addtotoc={
-		1, alonepage, 1, 承诺书, promise
-	}]{../assets/promise.pdf}
-	% 
-	\input{thanks.tex}
-	\clearpage
-	\input{abstract.tex}
+	%\includepdf[fitpaper=true,pages=-,pagecommand={\chapter*{承诺书}\addcontentsline{toc}{chapter}{承诺书}\thispagestyle{promise}}]{../assets/promise.pdf}
+	\includepdf[fitpaper=true,pages=-,pagecommand={\thispagestyle{promise}}]{../assets/promise.pdf}
+	\begin{acknowledgement}
+	谢谢勇于试毒的各位！
+	\end{acknowledgement}
+	\begin{abstract}
+	月色正朦胧，与清风把酒相送...
+
+	\keywords{醉清风，飞蛾扑火}
+
+	\end{abstract}
+	\begin{abstract}[en]
+
+	Hello world!
+
+	\keywords{thesis, math}
+	\end{abstract}
+	
+	%\input{abstract.tex}
     \tableofcontents
 	\begin{refsection}
 	\input{thesis.tex}
 	\end{refsection}
 	% resume
-	\input{resume.tex}
+	\begin{resume}
+		【似乎没有明确要求格式，本 demo 提供 enumerate 环境的实现】
+
+		\begin{enumerate}[label=,leftmargin=0em]
+		\item 姓名：未雅\quad 性别：未知\quad 民族：未知\quad 出生年月：2000-01-01\quad 籍贯：浙江杭州
+		\item 学习经历：
+		\begin{enumerate}[label=]
+		\item 2000.09-2014.06 学习
+		\item 2014.09-2018.06 浙江大学
+		\end{enumerate}
+		\item 获奖情况：
+		\item 参加项目：
+		\item 发表的学术论文：
+		\end{enumerate}
+	\end{resume}
+	%\input{resume.tex}
+
+
 	\includepdf[fitpaper=true,pages=-,pagecommand={\thispagestyle{empty}},addtotoc={
 		1, alonepage, 1, 《浙江大学本科生毕业论文（设计）任务书》, task
 	}]{../assets/official-1-task.pdf}
