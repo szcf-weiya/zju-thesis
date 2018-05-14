@@ -161,10 +161,10 @@
 \RequirePackage{csquotes}
 \RequirePackage{xcolor} % DO NOT forget
 \ifzju@numbib%
-\RequirePackage[backend=biber,sorting=nyt]{biblatex}
+\RequirePackage[backend=biber,sorting=nyt,style=apa]{biblatex}
 \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
 \else
-\RequirePackage[backend=biber,citestyle=authoryear,sortcites=true,natbib,sorting=nyt]{biblatex}
+\RequirePackage[backend=biber,citestyle=authoryear,sortcites=true,natbib,sorting=nyt,style=apa]{biblatex}
 %% set citation color as blue
 \DeclareCiteCommand{\cite}
   {\ifzju@nocolorbib\color{blue}\fi\usebibmacro{prenote}}%
