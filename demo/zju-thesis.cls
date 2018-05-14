@@ -337,7 +337,7 @@
 \renewcommand\appendixname{附录}
 \renewcommand\appendixtocname{附录}
 \AtBeginEnvironment{appendices}{\let\clearpage\relax}
-\BeforeBeginEnvironment{appendices}{\addcontentsline{toc}{chapter}{附录}\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}}
+\BeforeBeginEnvironment{appendices}{\addcontentsline{toc}{chapter}{附录}\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}\renewcommand\thesection{\thechapter.\arabic{section}}}
 \AfterEndEnvironment{appendices}{\addtocontents{toc}{\protect\setcounter{tocdepth}{6}}}
 \newenvironment{resume}
 {

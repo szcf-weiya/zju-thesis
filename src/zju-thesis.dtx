@@ -860,7 +860,7 @@
 % 附录页在目录中的显示。\footnote{参考\href{https://tex.stackexchange.com/questions/290973/hide-sections-of-specific-chapter-from-table-of-contents}{sectioning - Hide sections of specific chapter from table of contents - TeX - LaTeX Stack Exchange}}
 %    \begin{macrocode}
 %\BeforeBeginEnvironment{appendices}{\addtocontents{toc}{\protect\contentsline{alonepage}{\protect\numberline{}附录}{}}\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}}
-\BeforeBeginEnvironment{appendices}{\addcontentsline{toc}{chapter}{附录}\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}}
+\BeforeBeginEnvironment{appendices}{\addcontentsline{toc}{chapter}{附录}\addtocontents{toc}{\protect\setcounter{tocdepth}{-1}}\renewcommand\thesection{\thechapter.\arabic{section}}}
 \AfterEndEnvironment{appendices}{\addtocontents{toc}{\protect\setcounter{tocdepth}{6}}}
 %    \end{macrocode}
 % \subsection{作者简历}
