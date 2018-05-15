@@ -299,13 +299,13 @@
   \ifthenelse{\equal{#1}{en}}{%
      \chapter*{Abstract}
   }{%
-      \chapter*{摘要}
+      \chapter*{摘\hspace*{1em}要}
       %\addcontentsline{toc}{chapter}{摘要}
   }
 }{%
 }
 \newenvironment{acknowledgement}{%
-  \chapter*{致谢}
+  \chapter*{致\hspace*{1em}谢}
   %\addcontentsline{toc}{chapter}{致谢}
 }{%
 }
