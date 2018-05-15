@@ -133,10 +133,6 @@
 \AtBeginDocument{\thispagestyle{firstpage}}
 \AtBeginDocument{\assignpagestyle{\chapter}{followingpage}}
 \pagestyle{followingpage}
-\renewcommand{\figurename}{图}
-\renewcommand{\tablename}{表}
-\RequirePackage[labelfont=bf,tableposition=top]{caption}
-\RequirePackage{float}
 \RequirePackage[explicit]{titlesec}
 \newcommand{\chapterbreak}{\clearpage}
 
@@ -223,6 +219,10 @@
 
 \renewcommand\thepart{第\zhnum{part}部分}
 \addto\captionsamerican{\renewcommand{\partname}{}}
+\addto\captionsamerican{\renewcommand{\figurename}{图}}
+\addto\captionsamerican{\renewcommand{\tablename}{表}}
+\RequirePackage[labelfont=bf,tableposition=top]{caption}
+\RequirePackage{float}
 \renewcommand{\thechapter}{\arabic{chapter}}
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
 \titleformat{\chapter}{\chap}{\thechapter}{1em}{#1}
