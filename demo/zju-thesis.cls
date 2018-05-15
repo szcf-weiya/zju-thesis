@@ -369,12 +369,12 @@
 {
 \begingroup
 \begin{center}
-
+    {\small{\bfseries 涉密论文$\Box$公开论文$\Box$}}\\
 \includegraphics[width=0.8\textwidth]{../assets/zju-text.png}
 \\[1.2\baselineskip]
 {\Huge{\hei\bfseries {本\hp 科\hp 生\hp 毕\hp 业\hp 论\hp 文（设\hp 计）}}}\\[1.2\baselineskip] % Title
 \includegraphics[width=0.32\textwidth]{../assets/zju-xiaohui.jpg}\\[1\baselineskip]
-        \chap{题目}\ \underline{\makebox[11cm][c]{\chap\titleown}} \\[1.8\baselineskip]
+        \chap{题目}\ \underline{\makebox[11cm][c]{\chap\titleown}} \\[1.3\baselineskip]
 \begin{table}[h!]
   \begin{center}
 \begin{tabular}{ll}
