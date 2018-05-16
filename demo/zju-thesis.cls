@@ -265,11 +265,7 @@
 \makeatother
 \setcounter{tocdepth}{6}
 \setcounter{secnumdepth}{6}
-\makeatletter
-\renewcommand*\l@chapter{\@dottedtocline{0}{0em}{1.5em}}
-\makeatother
 \RequirePackage{titletoc}
-
 \titleclass{\alonepage}{straight}[\part]
 \newcounter{alonepage}
 \titleclass{\contabpage}{straight}[\part]
@@ -278,6 +274,8 @@
 \titlecontents{alonepage}[0pc]{}{}{}{}
 \titlecontents{contabpage}[0pc]{}{}{}{\titlerule*[1pc]{.}\thecontentspage}
 \titlecontents{part}[0pc]{\chap\bfseries}{}{}{}
+\titlecontents{chapter}[0pc]{\addvspace{0pt}\hspace*{0pc}}{\thecontentslabel\enspace}{}{
+\titlerule*[1pc]{.}\thecontentspage}%[\addvspace{3pt}]
 \titlecontents{section}[2pc]{}{\makebox[0pt][l]{\hspace*{-2pc}\thecontentslabel}}{}{\titlerule*[1pc]{.}\thecontentspage}
 \titlecontents{subsection}[3pc]{}{\makebox[0pt][l]{\hspace*{-3pc}\thecontentslabel}}{
 }{\titlerule*[1pc]{.} \thecontentspage}

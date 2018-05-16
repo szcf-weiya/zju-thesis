@@ -39,7 +39,9 @@
 		1, alonepage, 1, 《浙江大学本科生毕业论文（设计）考核表》,assess
 	}]{../assets/official-11-assess.pdf}
 	\part{文献综述和开题报告}
-	\renewcommand\thechapter{\zhnum{chapter}、} 
+	\renewcommand\thechapter{\zhnum{chapter}、}
+	\titlecontents{chapter}[0pc]{\addvspace{0pt}\hspace*{0pc}}{\thecontentslabel}{}{
+	\titlerule*[1pc]{.}\thecontentspage} 
 	\includepdf[fitpaper= true,pages=-,pagecommand={\thispagestyle{empty}},addtotoc={
 		1, alonepage, 1, 文献综述和开题报告封面, cover,
 		1, alonepage, 1, 指导教师对文献综述和开题报告具体内容要求, cover,
