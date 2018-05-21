@@ -111,6 +111,13 @@
 \renewcommand{\footrulewidth}{0pt} % no line
 \fancyhead[R]{\titleown}
 }
+\fancypagestyle{rightpage}{%
+\fancyhf{} % clear fields
+\renewcommand{\headrulewidth}{0.7pt} % no line
+\renewcommand{\footrulewidth}{0pt} % no line
+\fancyhead[R]{\titleown}
+  \fancyfoot[C]{\thepage}
+}
 \fancypagestyle{promise}{%
 \fancyhf{} % clear fields
 \fancyhead[RO]{\titleown}
@@ -302,11 +309,13 @@
       \chapter*{摘\hspace*{1em}要}
       %\addcontentsline{toc}{chapter}{摘要}
   }
+  \thispagestyle{rightpage}
 }{%
 }
 \newenvironment{acknowledgement}{%
   \chapter*{致\hspace*{1em}谢}
   %\addcontentsline{toc}{chapter}{致谢}
+  \thispagestyle{rightpage}
 }{%
 }
 
@@ -319,6 +328,7 @@
     {}{}% <success><failure>
   \oldtableofcontents%
   \endgroup%
+  \thispagestyle{rightpage}
 }
 \makeatother
 \addto\captionsamerican{\renewcommand{\contentsname}{\centerline{目\hspace*{1em}录}}}
