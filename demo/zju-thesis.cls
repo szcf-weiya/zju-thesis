@@ -157,7 +157,7 @@
 \RequirePackage{csquotes}
 \RequirePackage{xcolor} % DO NOT forget
 \ifzju@numbib%
-\RequirePackage[backend=biber,sorting=nyt,style=apa]{biblatex}
+\RequirePackage[backend=biber,sorting=nyt]{biblatex}
 \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
 \else
 \RequirePackage[backend=biber,citestyle=authoryear,sortcites=true,natbib,sorting=nyt,style=apa]{biblatex}
@@ -190,6 +190,7 @@
   {}
   {\usebibmacro{postnote}%
    \usebibmacro{cite:post}}
+\fi
 \DeclareLanguageMapping{american}{american-apa}
 \bibliography{ref.bib}
 \addbibresource{ref.bib}
