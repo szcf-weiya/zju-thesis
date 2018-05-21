@@ -344,6 +344,7 @@
 \newenvironment{resume}
 {
   \chapter*{作者简历}
+  \thispagestyle{rightpage}
   \addcontentsline{toc}{chapter}{作者简历}
 }{}
 \RequirePackage{graphicx}
