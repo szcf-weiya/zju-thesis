@@ -129,50 +129,40 @@
 %\renewcommand{\thechapter}{\CJK}
 
 %% 注意放置顺序
+\RequirePackage[american]{babel}
 \RequirePackage{csquotes}
 \RequirePackage{xcolor} % DO NOT forget
-\RequirePackage[backend=biber,citestyle=authoryear,sortcites=true,natbib]{biblatex}
-%\RequirePackage{chapterbib}
+\RequirePackage[backend=biber,citestyle=authoryear,sortcites=true,natbib,sorting=nyt,style=apa]{biblatex}
 %% set citation color as blue
-%\renewcommand\nametitledelim{\ifin{textcite}{\addspace}{\addspace\addcomma}}
-\DeclareCiteCommand{\cite}
-  {\color{blue}\usebibmacro{prenote}}%
-  {\usebibmacro{citeindex}%
-   \usebibmacro{cite}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
-\DeclareCiteCommand{\parencite}[\mkcolorbibparens]
-  {\usebibmacro{prenote}}%
-  {\usebibmacro{citeindex}%
-   \usebibmacro{cite}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
 \DeclareCiteCommand{\textcite}
   {\color{blue}
-	  \renewcommand*\nameyeardelim{\addspace}%
-	  \boolfalse{cbx:parens}%
-   \renewcommand*{\finalnamedelim}{% <---- this is new
-     \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
-     \addspace\bibstring{and}\space}}
+    \usebibmacro{cite:init}%
+   \usebibmacro{prenote}}
   {\usebibmacro{citeindex}%
-   \iffirstcitekey
-     {\setcounter{textcitetotal}{1}}
-     {\stepcounter{textcitetotal}%
-      \textcitedelim}%
    \usebibmacro{textcite}}
-  {\ifbool{cbx:parens}
-     {\bibcloseparen\global\boolfalse{cbx:parens}}
-     {}}
-  {\usebibmacro{textcite:postnote}}
-\makeatletter
-\newrobustcmd{\mkcolorbibparens}[1]{%
-	\begingroup
-	\color{blue}%
-	\blx@blxinit
-	\blx@setsfcodes
-	\bibopenparen#1\bibcloseparen
-	\endgroup}
-\makeatother
+  {}
+  {\usebibmacro{textcite:postnote}%
+   \usebibmacro{cite:post}}
+  \DeclareCiteCommand{\cite}
+  {\color{blue}
+    \usebibmacro{cite:init}%
+   \usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {}
+  {\usebibmacro{postnote}%
+   \usebibmacro{cite:post}}
+\DeclareCiteCommand{\parencite}[\mkbibparens]
+  {\renewcommand{\finalnamedelim}{\ifnum\value{liststop}>2 \finalandcomma\fi\addspace\&\space}%
+  \color{blue}
+   \usebibmacro{cite:init}%
+   \usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {}
+  {\usebibmacro{postnote}%
+   \usebibmacro{cite:post}}
+\DeclareLanguageMapping{american}{american-apa}
 %\patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
 \bibliography{ref.bib}
 \addbibresource{ref.bib}
@@ -184,7 +174,9 @@
 
 \RequirePackage{zhnumber}
 
-\renewcommand{\chaptername}{}
+%\renewcommand{\chaptername}{}
+\addto\captionsamerican{\renewcommand{\chaptername}{}}
+
 
 \renewcommand\thechapter{\zhnum{chapter}、} 
 
@@ -248,7 +240,7 @@
 %\setstretch{1.5}
 \spacing{1.5}
 
-\renewcommand{\contentsname}{{\centerline{目\hspace*{1em}录}}}
+\addto\captionsamerican{\renewcommand{\contentsname}{\centerline{目\hspace*{1em}录}}}
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% numbering
