@@ -84,8 +84,7 @@
 \newcommand{\bfxs}{\fontsize{12pt}{\baselineskip}\CJKfontspec[AutoFakeBold=4]{\fangfont}\bfseries}
 \newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\CJKfontspec[AutoFakeBold=false]{\fangfont}}
 \RequirePackage[left=2.5cm,right=2.0cm,top=2.5cm,bottom=2.0cm]{geometry}
-
-\renewcommand{\title}[2]{\gdef\titleown{#1}\gdef\titlezju{#2}}
+\renewcommand{\title}[2]{\gdef\titleownraw{#1}\gdef\titleown{\renewcommand\\{} #1}\gdef\titlezju{#2}}
 \ifzju@blind%
     \renewcommand{\author}[2]{\gdef\name{\relax}\gdef\stuid{\relax}}
     \newcommand{\grade}[2]{\gdef\grade{\relax}\gdef\major{\relax}}
@@ -385,7 +384,7 @@
 \\[1.2\baselineskip]
 {\Huge{\hei\bfseries {本\hp 科\hp 生\hp 毕\hp 业\hp 论\hp 文（设\hp 计）}}}\\[1.2\baselineskip] % Title
 \includegraphics[width=0.32\textwidth]{../assets/zju-xiaohui.jpg}\\[1\baselineskip]
-        \chap{题目}\ \underline{\makebox[11cm][c]{\chap\titleown}} \\[1.3\baselineskip]
+        \chap{题目}\ \underline{\makebox[11cm][c]{\shortstack{\chap\titleownraw}}} \\[1.3\baselineskip]
 \begin{table}[h!]
   \begin{center}
 \begin{tabular}{ll}
